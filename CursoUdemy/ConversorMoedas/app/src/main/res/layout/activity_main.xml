@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Bloco Principal do App -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:layout_margin="10dp">
+
+    <!-- Texto Introdutório -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:text="@string/qual_o_valor_em_real"
+        android:textSize="20sp" />
+
+    <!-- Campo para inserção do valor da moeda -->
+
+    <EditText
+        android:id="@+id/edit_Value"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:inputType="numberSigned"/>
+
+    <!-- Bloco contendo os sub-blocos de cada moeda -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal">
+
+        <!-- Sub-bloco do Dólar -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Texto fixo do Dólar -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:text="@string/valor_em_dolar" />
+
+            <!-- Texto variável do Dólar -->
+
+            <TextView
+                android:id="@+id/text_Dolar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="@string/dolar"
+                android:textColor="#03A9F4"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <!-- Sub-bloco do Euro -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Texto fixo do Euro -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="@string/valor_em_euro" />
+
+            <!-- Texto variável do Euro -->
+
+            <TextView
+                android:id="@+id/text_Euro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="@string/euro"
+                android:textColor="#03A9F4"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Botão para cálculo ao fim do app -->
+
+    <Button
+        android:id="@+id/button_Calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:background="#03A9F4"
+        android:text="@string/calculate"
+        android:textColor="#fff"
+        />
+
+</LinearLayout>
