@@ -32,7 +32,7 @@ def computador_escolhe_jogada(n, m):
 
 def usuario_escolhe_jogada(n, m):
     x = int(input("Quantas peças quer retirar ?"))
-    while x < 1 or x > m or x>n:
+    while (x < 1) or (x > m) or (x>n):
         x = int(input("Por favor insira uma jogada válida:"))
     if x == 1:
         print("Você tirou uma peça.")
