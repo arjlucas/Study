@@ -1,3 +1,7 @@
+# Coursera Python Training 1
+# Lucas Silva
+# Week 4 - Exercício Extra 1 - Verificação Primo
+
 n = int(input("Insira o valor de n:"))
 i = 1
 cdiv = 0

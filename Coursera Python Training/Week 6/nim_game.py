@@ -1,3 +1,7 @@
+# Coursera Python Training 1
+# Lucas Silva
+# Week 6 - Exercício Único - Jogo do NIM
+
 def jogar():
     x = int(input(("Bem vindo ao jogo do NIM ! Escollha 1 para jogar uma partida ou 2 para jogar um campeonato:")))
     while (x != 1 and x != 2):

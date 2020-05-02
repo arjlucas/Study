@@ -1,3 +1,7 @@
+# Coursera Python Training 1
+# Lucas Silva
+# Week 5 - Exercício Extra 1 - FizzBuzz
+
 def fizzbuzz(n):
     v1 = "Fizz"
     v2 = "Buzz"

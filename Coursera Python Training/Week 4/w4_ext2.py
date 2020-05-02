@@ -1,3 +1,7 @@
+# Coursera Python Training 1
+# Lucas Silva
+# Week 4 - Exercício 2 - Checagem dígitos repetidos
+
 n=int(input("Insira o valor de n:"))
 i=len(str(n))
 repete=False

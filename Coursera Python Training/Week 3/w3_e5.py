@@ -1,3 +1,7 @@
+# Coursera Python Training 1
+# Lucas Silva
+# Week 3 - Exercício 5 - Verificação Ordem
+
 num1=int(input("Insira um número inteiro:"))
 num2=int(input("Insira um número inteiro:"))
 num3=int(input("Insira um número inteiro:"))

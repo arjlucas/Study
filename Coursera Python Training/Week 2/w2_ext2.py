@@ -1,3 +1,7 @@
+# Coursera Python Training 1
+# Lucas Silva
+# Week 2 - Exercício Extra 2 - Conversão de Segundos
+
 seg=int(input("Por favor, entre com o número de segundos que deseja converter:"))
 d=seg//86400
 h=seg%86400//3600

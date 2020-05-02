@@ -1,3 +1,7 @@
+# Coursera Python Training 1
+# Lucas Silva
+# Week 4 - Exercício 2 - N primeiros números ímpares naturais
+
 n=int(input("Insira o valor de n:"))
 i=1
 c=0

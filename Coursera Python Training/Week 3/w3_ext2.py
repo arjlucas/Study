@@ -1,3 +1,7 @@
+# Coursera Python Training 1
+# Lucas Silva
+# Week 3 - Exercício Extra 2 - Bháskara
+
 import math
 a = float(input("Insira o valor do elemento A:"))
 b = float(input("Insira o valor do elemento B:"))

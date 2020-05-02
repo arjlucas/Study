@@ -1,3 +1,7 @@
+# Coursera Python Training 1
+# Lucas Silva
+# Week 3 - Exercício Extra 1 - Distância entre dois pontos.
+
 import math
 x1=float(input("Insira x1:"))
 x2=float(input("Insira x2:"))

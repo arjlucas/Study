@@ -1,5 +1,6 @@
-# Exercícios Week 7 - Coursera Python Training 1
+# Coursera Python Training 1
 # Lucas Silva
+# Week 7 - Exercício 2 - Impressão de Quadrados Vazios
 
 l = int(input("digite a largura:"))
 a = int(input("digite a altura:"))

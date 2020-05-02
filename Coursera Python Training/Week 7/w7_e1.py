@@ -1,5 +1,6 @@
-# Exercícios Week 7 - Coursera Python Training 1
+# Coursera Python Training 1
 # Lucas Silva
+# Week 7 - Exercício 1 - Impressão de Quadrados
 
 x = int(input("digite a largura:"))
 y = int(input("digite a altura:"))

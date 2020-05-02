@@ -1,3 +1,7 @@
+# Coursera Python Training 1
+# Lucas Silva
+# Week 5 - Exercício 2 - Maior número primo até N
+
 def maior_primo(n):
     maior = 1
     primo = False
