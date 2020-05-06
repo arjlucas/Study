@@ -83,7 +83,72 @@ def compara_assinatura(as_a, as_b):
 
 def calcula_assinatura(texto):
     '''IMPLEMENTAR. Essa funcao recebe um texto e deve devolver a assinatura do texto.'''
-    pass
+    
+    # Separando sentenças para cada texto carregado e armazenado no
+    # vetor de textos
+    for i in range(len(textos)):
+        # Contador do tamanho das palavras do texto
+        cont_char=0
+
+        # Contador do número de palavras
+        cont_pal=0
+
+        # Contador do número de palavras diferentes
+        pal_dif=0
+    
+        # Tamanho médio das Sentenças
+        tam_med_sen = 0
+    
+        # Complexidade Média das Sentenças
+        complex_sen = 0
+    
+        # sentencas constitui uma lista contendo cada sentenca separada do 
+        # texto na posição i da lista textos
+        sentencas=separa_sentencas(textos[i])
+    
+        # Contador de Sentenças
+        cont_sen = len(sentencas)
+    
+        # Contador de Frases
+        cont_fra = 0
+    
+        # Tamanho Médio de Frases
+        tam_med_fra = 0
+        
+        # Lista vazia de teste para calcula da R-Hapax Legomana
+        teste=[]
+    
+        for j in range(len(sentencas)):
+            # Frases constitui uma lista contendo cada frase separada da sentenca
+            # na posição j da lista sentencas
+            frases=separa_frases(sentencas[j])
+            cont_fra = len(frases)
+        
+            for k in range(len(frases)):
+                # Palavras constitui uma lista contendo cada palavra separada da
+                # frase na posição k do lista frases
+                palavras=separa_palavras(frases[k])
+                # pal_uni = n_palavras_unicas(palavras)
+                pal_dif += n_palavras_diferentes(palavras)
+                # Conta o numero de palavras no vetor palavras
+                cont_pal += len(palavras)
+            
+                for l in range(len(palavras)):
+                    # Conta a quantidade de caracteres em cada palavra de cada posição do vetor palavras
+                    cont_char += len(palavras[l])
+                    teste.append(palavras[l])
+        
+        pal_un_tex = n_palavras_unicas(teste)
+        rel_hpx_lego = pal_un_tex / cont_pal
+        tam_med_pal = cont_char / cont_pal
+        rel_type_token = pal_dif / cont_pal
+        tam_med_sen = cont_char / cont_pal
+        complex_sen = cont_fra / cont_sen
+        tam_med_fra = cont_char / cont_fra
+    
+    # Falta calcular a Razão Hapax Legomana após a Type Token
+    return [tam_med_pal, rel_type_token, rel_hpx_lego, tam_med_sen, complex_sen, tam_med_fra]
+    
 
 def avalia_textos(textos, ass_cp):
     '''IMPLEMENTAR. Essa funcao recebe uma lista de textos e uma assinatura ass_cp e deve devolver o numero (1 a n) do texto com maior probabilidade de ter sido infectado por COH-PIAH.'''
@@ -91,34 +156,15 @@ def avalia_textos(textos, ass_cp):
 
 
 # Código recebe a assinatura do Perfil referencial
-# assinatura = le_assinatura()
+assinatura_ref = le_assinatura()
 
 # Os textos a serem analisados são carregados via função
 textos = le_textos()
 
-# Contador do tamanho das palavras do texto
-cont_tam_pal=0
 
-# Contador do número de palavras
-cont_pal=0
 
-# Separando sentenças para cada texto carregado e armazenado no
-# vetor de textos
-for i in range(len(textos)):
-    # sentencas constitui uma lista contendo cada sentenca separada do 
-    # texto na posição i da lista textos
-    sentencas=separa_sentencas(textos[i])
-    for j in range(len(sentencas)):
-        # Frases constitui uma lista contendo cada frase separada da sentenca
-        # na posição j da lista sentencas
-        frases=separa_frases(sentencas[j])
-        for k in range(len(frases)):
-            # Palavras constitui uma lista contendo cada palavra separada da
-            # frase na posição k do lista frases
-            palavras=separa_palavras(frases[k])
-            pal_uni = n_palavras_unicas(palavras)
-            pal_dif = n_palavras_diferentes(palavras)
-            cont_pal += len(palavras)
-            for l in range(len(palavras)):
-                cont_tam_pal += len(palavras[l])
-                
+    
+    # A Ordem da Assinatura é = [wal, ttr, hlr, sal, sac, pal]
+    # assinatura = [tam_med_pal, rel_ty_token, raz_hapax_legomana, tam_med_sen, comp_sen, tam_med_fra]
+    
+
