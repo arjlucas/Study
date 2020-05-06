@@ -156,7 +156,15 @@ def calcula_assinatura(texto):
 
 def avalia_textos(textos, ass_cp):
     '''IMPLEMENTAR. Essa funcao recebe uma lista de textos e uma assinatura ass_cp e deve devolver o numero (1 a n) do texto com maior probabilidade de ter sido infectado por COH-PIAH.'''
-    pass
+    similaridade=[]
+    x=[]
+    for i in range(len(textos)):
+        assinatura = calcula_assinatura(textos[i])
+        similaridade.append(compara_assinatura(ass_cp, assinatura))
+    x=min(similaridade)
+    texto = (similaridade.index(x))+1
+    
+    return texto
 
 
 # Código recebe a assinatura do Perfil referencial
@@ -165,10 +173,5 @@ assinatura_ref = le_assinatura()
 # Os textos a serem analisados são carregados via função
 textos = le_textos()
 
-
-
-    
-    # A Ordem da Assinatura é = [wal, ttr, hlr, sal, sac, pal]
-    # assinatura = [tam_med_pal, rel_ty_token, raz_hapax_legomana, tam_med_sen, comp_sen, tam_med_fra]
-    
-
+texto_infectado = avalia_textos(textos,assinatura_ref)
+print("O autor do texto", texto_infectado,"está infectado com COH-PIAH")
