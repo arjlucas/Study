@@ -90,65 +90,72 @@ def calcula_assinatura(texto):
     
     # Separando sentenças para cada texto carregado e armazenado no
     # vetor de textos
-    for i in range(len(textos)):
-        # Contador do tamanho das palavras do texto
-        cont_char=0
+    # Contador do tamanho das palavras do texto
+    cont_char=0
 
-        # Contador do número de palavras
-        cont_pal=0
+    # Contador do número de palavras
+    cont_pal=0
 
-        # Contador do número de palavras diferentes
-        pal_dif=0
+    # Contador do número de palavras diferentes
+    pal_dif=0
     
-        # Tamanho médio das Sentenças
-        tam_med_sen = 0
+    # Tamanho médio das Sentenças
+    tam_med_sen = 0
     
-        # Complexidade Média das Sentenças
-        complex_sen = 0
+    # Complexidade Média das Sentenças
+    complex_sen = 0
     
-        # sentencas constitui uma lista contendo cada sentenca separada do 
-        # texto na posição i da lista textos
-        sentencas=separa_sentencas(textos[i])
+    # sentencas constitui uma lista contendo cada sentenca separada do 
+    # texto na posição i da lista textos
+    sentencas=separa_sentencas(texto)
     
-        # Contador de Sentenças
-        cont_sen = len(sentencas)
+    # Contador de Sentenças
+    cont_sen = len(sentencas)
     
-        # Contador de Frases
-        cont_fra = 0
+    # Contador de Frases
+    cont_fra = 0
     
-        # Tamanho Médio de Frases
-        tam_med_fra = 0
+    # Tamanho Médio de Frases
+    tam_med_fra = 0
         
-        # Lista vazia de teste para calcula da R-Hapax Legomana
-        teste=[]
+    # Lista vazia de teste para calculo da R-Hapax Legomana
+    teste=[]
     
-        for j in range(len(sentencas)):
-            # Frases constitui uma lista contendo cada frase separada da sentenca
-            # na posição j da lista sentencas
-            frases=separa_frases(sentencas[j])
-            cont_fra = len(frases)
+    for j in range(len(sentencas)):
+        # Frases constitui uma lista contendo cada frase separada da sentenca
+        # na posição j da lista sentencas
+        frases=separa_frases(sentencas[j])
+        cont_fra = len(frases)
         
-            for k in range(len(frases)):
-                # Palavras constitui uma lista contendo cada palavra separada da
-                # frase na posição k do lista frases
-                palavras=separa_palavras(frases[k])
-                # pal_uni = n_palavras_unicas(palavras)
-                pal_dif += n_palavras_diferentes(palavras)
-                # Conta o numero de palavras no vetor palavras
-                cont_pal += len(palavras)
+        for k in range(len(frases)):
+            # Palavras constitui uma lista contendo cada palavra separada da
+            # frase na posição k do lista frases
+            palavras=separa_palavras(frases[k])
+            # Conta o numero de palavras no vetor palavras
+            cont_pal += len(palavras)
             
-                for l in range(len(palavras)):
-                    # Conta a quantidade de caracteres em cada palavra de cada posição do vetor palavras
-                    cont_char += len(palavras[l])
-                    teste.append(palavras[l])
+            for l in range(len(palavras)):
+                # Conta a quantidade de caracteres em cada palavra de cada posição do vetor palavras
+                cont_char += len(palavras[l])
+                teste.append(palavras[l])
         
-        pal_un_tex = n_palavras_unicas(teste)
-        rel_hpx_lego = pal_un_tex / cont_pal
-        tam_med_pal = cont_char / cont_pal
-        rel_type_token = pal_dif / cont_pal
-        tam_med_sen = cont_char / cont_pal
-        complex_sen = cont_fra / cont_sen
-        tam_med_fra = cont_char / cont_fra
+    pal_un_tex = n_palavras_unicas(teste)
+    pal_dif = n_palavras_diferentes(teste)
+    rel_hpx_lego = pal_un_tex / cont_pal
+    tam_med_pal = cont_char / cont_pal
+    rel_type_token = pal_dif / cont_pal
+    tam_med_sen = cont_char / cont_sen
+    complex_sen = cont_fra / cont_sen
+    tam_med_fra = cont_char / cont_fra
+    
+    
+    
+    print("Sentenças:", cont_sen)
+    print("Frases:", cont_fra)
+    print("Palavras", cont_pal)
+    print("Caracteres", cont_char)
+    print("Texto:", teste)
+    
     
     # Falta calcular a Razão Hapax Legomana após a Type Token
     return [tam_med_pal, rel_type_token, rel_hpx_lego, tam_med_sen, complex_sen, tam_med_fra]
@@ -168,10 +175,13 @@ def avalia_textos(textos, ass_cp):
 
 
 # Código recebe a assinatura do Perfil referencial
-assinatura_ref = le_assinatura()
+#assinatura_ref = le_assinatura()
 
 # Os textos a serem analisados são carregados via função
-textos = le_textos()
+#textos = le_textos()
 
-texto_infectado = avalia_textos(textos,assinatura_ref)
-print("O autor do texto", texto_infectado,"está infectado com COH-PIAH")
+#texto_infectado = avalia_textos(textos,assinatura_ref)
+#print("O autor do texto", texto_infectado,"está infectado com COH-PIAH")
+    
+texto = "Muito além, nos confins inexplorados da região mais brega da Borda Ocidental desta Galáxia, há um pequeno sol amarelo e esquecido. Girando em torno deste sol, a uma distancia de cerca de 148 milhões de quilômetros, há um planetinha verde-azulado absolutamente insignificante, cujas formas de vida, descendentes de primatas, são tão extraordinariamente primitivas que ainda acham que relógios digitais são uma grande ideia."
+print(calcula_assinatura(texto))
